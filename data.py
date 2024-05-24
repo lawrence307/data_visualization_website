@@ -27,16 +27,12 @@ print(df.duplicated().sum())
 df.hist(figsize=(10, 10))
 plt.show()
 
-
 # Standardize date format and string columns
-df['date'] = pd.to_datetime(df['date'])
-df['category'] = df['category'].str.lower()
+df['Date'] = pd.to_datetime(df['Date'])
 
 # Handle missing data
 df = df.dropna()  # or use df['column_name'] = df['column_name'].fillna(df['column_name'].mean())
 
-# Validate data
-df = df[df['price'] > 0]  # Ensure prices are positive
 
 print(df.head())
 print(df.info())
